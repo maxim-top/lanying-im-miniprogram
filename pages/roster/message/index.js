@@ -41,14 +41,21 @@ Component({
 
     const umaps = app.im.rosterManage.getAllRosterDetail();
     const fromUserObj = umaps[from] || {};
+    if( from == 0 ){
+      // system message
+      fromUserObj.username = "系统通知";
+      fromUserObj.avatar = "/pages/image/tab/setting.png";
+    }
+
     let avatar = app.im.sysManage.getImage({
       avatar: fromUserObj.avatar,
       sdefault: "../../image/r.png"
     });
     username = fromUserObj.nick_name || fromUserObj.username || "";
     if (from == uid) {
-      username = "我自己";
+      username = "我";
     }
+
     const attach = message.attach || {};
 
     let url = attach.url || '';

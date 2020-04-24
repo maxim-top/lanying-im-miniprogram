@@ -6,9 +6,18 @@
     <view wx:if="{{conversation.unread != 0}}" class='unread_number'>
       <text>{{conversation.unread}}</text>
     </view>
-    <image src='{{conversation.avatar}}' class='avatar'></image>
-    <view class='name'>
-      <text>{{conversation.name}}</text>
+
+    <view wx:if="{{conversation.sid == 0}}">
+      <image src='{{system_avatar.avatar}}' class='avatar'></image>
+      <view class='name'>
+        <text>{{system_avatar.name}}</text>
+      </view>
+    </view>
+    <view wx:else>
+      <image src='{{conversation.avatar}}' class='avatar'></image>
+      <view class='name'>
+        <text>{{conversation.name}}</text>
+      </view>
     </view>
     <view class='last_msg'>
       <text>{{conversation.content}}</text>

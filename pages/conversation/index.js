@@ -2,6 +2,10 @@ Page({
   data: {
     conversationList: [],
     navHeight: 0,
+    system_avatar: {
+      name: "系统通知",
+      avatar: "/pages/image/tab/setting.png",
+    }
   },
 
 

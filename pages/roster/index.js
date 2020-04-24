@@ -58,7 +58,9 @@ Page({
 
     /** 设置title */
     const umaps = app.im.rosterManage.getAllRosterDetail();
-    const fromUserObj = umaps[uid] || {};
+    let fromUserObj = umaps[uid] || {};
+    if ( uid == 0 ) fromUserObj.username = '系统通知';
+
     this.setData({ stitle: nick || fromUserObj.nick_name || fromUserObj.username || '' });
 
     const wh = wx.getSystemInfoSync().windowHeight - this.data.navHeight - 50;
@@ -70,12 +72,15 @@ Page({
     const isHistory = data.history;
     const uid = getApp().globalData.im.userManage.getUid();
     const oldMessages = this.data.messages || [];
+    console.log("APPEND message new: ", newMessages);
     newMessages.forEach(meta => {
       isHistory && (meta.h = true);
       /////////////////////
       const { from, to } = meta;
 
       let saveUid = from == uid ? to : from;
+      if( saveUid == '' ) saveUid = 0; // empty from means system message
+
       if (saveUid + '' !== this.data.uid + '') {
         return; // rosterchat, 必须有一个id是 sid
       }
