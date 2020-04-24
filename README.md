@@ -2,7 +2,7 @@
 
 此工程为标准微信工程，共有四个源码目录：
 
-1. lib 存放美信拓扑IM SDK: floo-1.0.0.miniprogram.js
+1. im 存放美信拓扑IM SDK，当前最新版本为 floo-2.0.0.miniprogram.js
 2. pages 为 UI 源码目录；
 3. utils 为使用的工具类源码；
 4. third 为第三方源码；
