@@ -1,0 +1,14 @@
+<view class="prompt-box" hidden="{{isHidden}}">
+  <view class="prompt-content contentFontColor">
+    <view wx:if="title" class="prompt-title">
+      <text>{{title}}</text>
+    </view>
+    <input class="prompt-input" type="digit" bindinput="_input" value="{{cost}}" placeholder="请输入" />
+    <view class="prompt-btn-group">
+      <button class="btn-item prompt-cancel-btn contentFontColor" bind:tap="_cancel">
+        {{btn_cancel}}
+      </button>
+      <button class="btn-item prompt-certain-btn" bind:tap="_confirm">{{btn_certain}}</button>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "message": "./message/index",
+    "snav": "../components/snav/index"
+  }
+}

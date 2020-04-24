@@ -1,0 +1,23 @@
+<!-- index.wxml -->
+<snav>
+  <view class="back" catchtap="backClick">
+    <image class='back_kmg' src="../../image/back.png"></image>
+  </view>
+</snav>
+<view class="container" style="padding-top:{{navHeight}}px">
+  <view class="fs48 mt100">
+    <text>注册并绑定账户</text>
+  </view>
+  <view class='inputFrame'>
+    <input value='{{sname}}' type='text' placeholder='用户名' bindinput="nameHandler"></input>
+  </view>
+  <view class='inputFrame'>
+    <input type='text' value="{{spass}}" password placeholder='密码' bindinput="passHandler"></input>
+  </view>
+  <view class='buttonFrame' bindtap='bindHandler'>
+    <text class="login_btn" type="primary">继续</text>
+  </view>
+  <view class="colorb tc fs28 mt30">
+    <text class="" bindtap="goBind">已有账户，直接绑定</text>
+  </view>
+</view>

@@ -1,0 +1,62 @@
+<snav bgColor="#4FA0FF">
+  <view class="back" catchtap="backClick">
+    <image class='back_kmg' src="../../image/back.png"></image>
+  </view>
+</snav>
+<view class="header_view" style="padding-top:{{navHeight}}px">
+  <image src="{{profile.avatar}}" class='avatar'></image>
+  <view class='nick'>
+    <text>{{profile.nick_name || profile.username}}</text>
+  </view>
+  <view class='id'>
+    <text>ID:{{profile.user_id}}</text>
+  </view>
+</view>
+<view class="container">
+  <view class="item">
+    <view class="sleft">
+      <text class="ltext">ID</text>
+    </view>
+    <view class="sright">
+      <text class="rtext">{{profile.user_id}}</text>
+    </view>
+  </view>
+  <view class="item">
+    <view class="sleft">
+      <text class="ltext">用户名</text>
+    </view>
+    <view class="sright">
+      <text class="rtext">{{profile.username}}</text>
+    </view>
+  </view>
+  <view class="item">
+    <view class="sleft">
+      <text class="ltext">昵称</text>
+    </view>
+    <view class="sright">
+      <text class="rtext">{{profile.nick_name}}</text>
+    </view>
+  </view>
+  <view class="item" bindtap="unbindMobile">
+    <view class="sleft">
+      <text class="ltext">手机号</text>
+    </view>
+    <view class="sright">
+      <text class="rtext">{{profile.mobile}}</text>
+    </view>
+  </view>
+  <view class="item">
+    <view class="sleft">
+      <text class="ltext">邮箱</text>
+    </view>
+    <view class="sright">
+      <text class="rtext">{{profile.email}}</text>
+    </view>
+  </view>
+</view>
+<view class='bindBtn sblue mt50' bindtap='goChat'>
+  <text>开始聊天</text>
+</view>
+<!-- <view class='bindBtn sblue' wx:if="{{!binded}}" bindtap='bindHandler'>
+  <text>绑定微信</text>
+</view> -->

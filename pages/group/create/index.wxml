@@ -1,0 +1,26 @@
+<snav title="创建群组">
+  <view class="back" catchtap="backClick">
+    <image class='back_kmg' src="../../image/back.png"></image>
+  </view>
+</snav>
+<view class="container" style="padding-top:{{navHeight}}px">
+  <view class='inputFrame'>
+    <input type='text' value="{{name}}" placeholder='输入群名称' bindinput="nameHandler"></input>
+  </view>
+  <view class='inputFrame th mt'>
+    <input class="th" type='textarea' value="{{description}}" placeholder='输入群描述' bindinput="descriptionHandler"></input>
+  </view>
+  <view class="stxt">
+    <text>选择群成员</text>
+  </view>
+  <view class="roster_list">
+    <view wx:for="{{rosterList}}" wx:key="user_id" data-idx='{{index}}' wx:for-index="index" wx:for-item="item" class="item" bindtap='tapRoster'>
+      <image src="{{item.avatar}}" class='avatar'></image>
+      <text class='uname'>{{item.nick_name ||  item.username}}</text>
+      <image src="../../image/check.png" wx:if="{{item.flag}}" class='check'></image>
+    </view>
+  </view>
+  <view class='bindBtn sblue' bindtap='create'>
+    <text>创建群组</text>
+  </view>
+</view>

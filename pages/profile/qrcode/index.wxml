@@ -1,0 +1,21 @@
+<snav title="我的二维码">
+  <view class="back" catchtap="backClick">
+    <image class='back_kmg' src="../../image/back.png"></image>
+  </view>
+</snav>
+
+<view class="container">
+  <view class="info">
+    <image src="{{profile.avatar}}" class='avatar'></image>
+    <view class="content">
+      <view class="nick"><text>昵称：{{profile.nickname || profile.username}}</text></view>
+      <view class="uid"><text>id：{{profile.user_id}}</text></view>
+    </view>
+  </view>
+
+  <view class="canvas-box">
+    <canvas style="width: 600rpx;height: 600rpx;background:#f1f1f1;" canvas-id="mycanvas" />
+  </view>
+
+
+</view>

@@ -1,0 +1,17 @@
+<snav>
+  <text class="atitle">美信拓扑</text>
+</snav>
+<view class="container" style="padding-top:{{navHeight}}px">
+  <view wx:for="{{conversationList}}" wx:for-item="conversation" wx:key="index" bindtap='touchConversation' data-type='{{conversation.type}}' data-sid='{{conversation.sid}}' class='item'>
+    <view wx:if="{{conversation.unread != 0}}" class='unread_number'>
+      <text>{{conversation.unread}}</text>
+    </view>
+    <image src='{{conversation.avatar}}' class='avatar'></image>
+    <view class='name'>
+      <text>{{conversation.name}}</text>
+    </view>
+    <view class='last_msg'>
+      <text>{{conversation.content}}</text>
+    </view>
+  </view>
+</view>

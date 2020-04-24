@@ -1,0 +1,29 @@
+<!-- index.wxml -->
+<snav>
+  <text style="font-size:32rpx"></text>
+</snav>
+<prompt id="prompt" title='修改APPID' btn_certain='确定' bind:confirm="confirm"></prompt>
+<view class="container">
+  <view bindtap="appidTapHandler">
+    <text class="appid_text">APPID：{{appid}}</text>
+    <image class='edit_logo' src='../image/edit.png'></image>
+  </view>
+  <view class="logo">
+    <image class='logo_image' src='../image/slogo.png'></image>
+  </view>
+  <view class='inputFrame'>
+    <input value='{{sname}}' type='text' placeholder='用户名/手机号' bindinput="nameHandler"></input>
+  </view>
+  <view class='inputFrame'>
+    <input type='text' value="{{spass}}" password placeholder='输入登录密码' bindinput="passHandler"></input>
+  </view>
+  <view class='txtFrame'>
+    <checkbox-group bindchange="checkboxChange" class="check_box">
+      <checkbox value="1" checked="{{checked}}" color="#4FA0FF" />
+      <text class='bindTxt'>绑定到微信账号</text>
+    </checkbox-group>
+  </view>
+  <view class='buttonFrame'>
+    <text class="login_btn" type="primary" bindtap='bindHandler'>登录</text>
+  </view>
+</view>

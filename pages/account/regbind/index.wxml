@@ -1,0 +1,24 @@
+<!-- index.wxml -->
+<snav>
+  <!-- <view class="back" catchtap="backClick">
+    <image class='back_kmg' src="../../image/back.png"></image>
+  </view> -->
+</snav>
+<view class="container" style="padding-top:{{navHeight}}px">
+  <view class="fs48 mt100">
+    <text>绑定手机号</text>
+  </view>
+  <view class='inputFrame'>
+    <input value='{{mobile}}' type='text' placeholder='手机号' bindinput="mobileHandler"></input>
+  </view>
+  <view class='inputFrame'>
+    <input type='text' style="width:40%;float:left" value="{{code}}" password placeholder='输入登录密码' bindinput="codeHandler"></input>
+    <text class="getCode colorb" style="float:right" bindtap="getCode">{{codeText}}</text>
+  </view>
+  <view class='buttonFrame' bindtap='sbind'>
+    <text class="login_btn" type="primary">绑定</text>
+  </view>
+  <view class="colorb tc fs28 mt30">
+    <text class="mr20" bindtap="goContact">跳过</text>
+  </view>
+</view>

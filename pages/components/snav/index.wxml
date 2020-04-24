@@ -1,0 +1,8 @@
+<view class="navbar custom-class" style="height:{{navHeight}}px;background-color:{{bgColor}}">
+  <view class="navbar-action-wrap" style='top:{{navTop-3}}px;'>
+    <slot></slot>
+  </view>
+  <view wx:if="title" class="navbar-title" style='top:{{navTop}}px'>
+    <text class="stitle">{{title}}</text>
+  </view>
+</view>

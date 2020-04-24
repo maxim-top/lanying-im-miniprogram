@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "snav": "../components/snav/index",
+    "prompt" : "../components/prompt/index"
+  }
+}

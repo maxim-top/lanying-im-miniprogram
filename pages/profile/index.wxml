@@ -1,0 +1,74 @@
+<view class="header_view" style="padding-top:{{navHeight}}px">
+  <image src="{{profile.avatar}}" class='avatar'></image>
+  <view class='nick'>
+    <text>{{profile.nick_name || profile.username}}</text>
+    <image class="qrcode" src="../../../../image/qrcode.jpg" bindtap="goQrcode"></image>
+  </view>
+  <view class='id'>
+    <text>ID：{{profile.user_id}}</text>
+  </view>
+</view>
+<view class="container">
+  <view class="item">
+    <view class="sleft">
+      <text class="ltext">ID</text>
+    </view>
+    <view class="sright">
+      <text class="rtext">{{profile.user_id}}</text>
+    </view>
+  </view>
+  <view class="item">
+    <view class="sleft">
+      <text class="ltext">用户名</text>
+    </view>
+    <view class="sright">
+      <text class="rtext">{{profile.username}}</text>
+    </view>
+  </view>
+  <view class="item">
+    <view class="sleft">
+      <text class="ltext">昵称</text>
+    </view>
+    <view class="sright">
+      <text class="rtext">{{profile.nick_name}}</text>
+    </view>
+  </view>
+  <view class="item" bindtap="unbindMobile">
+    <view class="sleft">
+      <text class="ltext">手机号</text>
+    </view>
+    <view class="sright">
+      <text class="rtext">{{profile.mobile}}</text>
+    </view>
+  </view>
+  <view class="item">
+    <view class="sleft">
+      <text class="ltext">邮箱</text>
+    </view>
+    <view class="sright">
+      <text class="rtext">{{profile.email}}</text>
+    </view>
+  </view>
+  <view class="item" bindtap="goAbout">
+    <view class="sleft">
+      <text class="ltext">关于我们</text>
+    </view>
+  </view>
+  <view class="item nb">
+    <view class="sleft">
+      <text class="ltext">微信绑定</text>
+    </view>
+    <view class="sright">
+      <text wx:if="{{binded}}" class="rtext" bindtap="unbindHandler">已绑定，点击解除</text>
+      <button wx:if="{{!binded}}" class="bindBtnClass" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">
+        点击绑定
+      </button>
+    </view>
+  </view>
+</view>
+<view class='bindBtn sgray' bindtap='logout'>
+  <text>退出</text>
+</view>
+<!-- <view class='bindBtn sblue' wx:if="{{!binded}}" bindtap='bindHandler'>
+  <text>绑定微信</text>
+</view> -->

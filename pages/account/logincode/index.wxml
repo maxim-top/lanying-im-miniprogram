@@ -1,0 +1,31 @@
+<!-- index.wxml -->
+<snav>
+  <view class="back" catchtap="backClick">
+    <image class='back_kmg' src="../../image/back.png"></image>
+  </view>
+</snav>
+<prompt id="prompt" title='修改APPID' btn_certain='确定' bind:confirm="confirm"></prompt>
+<view class="container" style="padding-top:{{navHeight}}px">
+  <view bindtap="appidTapHandler">
+    <text class="appid_text">APPID：{{appid}}</text>
+    <image class='edit_logo' src='../../image/edit.png'></image>
+  </view>
+  <view class="fs48 mt100">
+    <text>验证码登录</text>
+  </view>
+  <view class='inputFrame'>
+    <input value='{{mobile}}' type='text' placeholder='手机号' bindinput="mobileHandler"></input>
+  </view>
+  <view class='inputFrame'>
+    <input type='text' style="width:40%;float:left" value="{{code}}" placeholder='输入验证码' bindinput="codeHandler"></input>
+    <text class="getCode colorb" style="float:right" bindtap="getCode">{{codeText}}</text>
+  </view>
+  <view class='buttonFrame' bindtap='sbind'>
+    <text class="login_btn" type="primary">继续</text>
+  </view>
+  <view class="colorb tc fs28 mt30">
+    <text class="mr20" bindtap="backClick">密码登录</text>
+    <text class="mr20">|</text>
+    <text bindtap="goreg">注册</text>
+  </view>
+</view>

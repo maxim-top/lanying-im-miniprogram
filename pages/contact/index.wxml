@@ -1,0 +1,35 @@
+<snav>
+  <view class="aheader">
+    <view data-num="0" class="tag {{menuCurr==0? 'sel':''}}" catchtap="menuClick">
+      <text>好友</text>
+    </view>
+    <view data-num="1" class="tag {{menuCurr==1? 'sel':''}}" catchtap="menuClick">
+      <text>群组</text>
+    </view>
+    <view wx:if="{{showsupports}}" data-num="2" class="tag {{menuCurr==2? 'sel':''}}" catchtap="menuClick">
+      <text>支持</text>
+    </view>
+  </view>
+</snav>
+<view class="container" style="padding-top:{{navHeight}}px">
+  <view wx:if="{{menuCurr==0}}" class="item" bindtap='addRoster'>
+    <image src="../image/add.png" class='avatar'></image>
+    <text class='uname'>添加好友</text>
+  </view>
+  <view wx:if="{{menuCurr==1}}" class="item" bindtap='createGroup'>
+    <image src="../image/cgroup.png" class='avatar'></image>
+    <text class='uname'>创建群组</text>
+  </view>
+  <view wx:if="{{menuCurr==0}}" wx:for="{{rosterList}}" wx:key="user_id" data-uid='{{item.user_id}}' data-nick='{{item.nick_name || item.username}}' wx:for-index="index" wx:for-item="item" class="item" bindtap='goChat'>
+    <image src="{{item.avatar}}" class='avatar'></image>
+    <text class='uname'>{{item.nick_name || item.nickname || item.username}}</text>
+  </view>
+  <view wx:if="{{menuCurr==1}}" wx:for="{{groupList}}" wx:key="group_id" data-gid='{{item.group_id}}' wx:for-index="index" wx:for-item="item" class="item" bindtap='goGroup'>
+    <image src="{{item.avatar}}" class='avatar'></image>
+    <text class='uname'>{{item.name}}</text>
+  </view>
+  <view wx:if="{{menuCurr==2}}" wx:for="{{staticList}}" wx:key="group_id" data-uid='{{item.user_id}}' data-nick='{{item.nickname}}' wx:for-index="index" wx:for-item="item" class="item" bindtap='goChat'>
+    <image src="{{item.avatar}}" class='avatar'></image>
+    <text class='uname'>{{item.nick_name || item.nickname || item.username}}</text>
+  </view>
+</view>

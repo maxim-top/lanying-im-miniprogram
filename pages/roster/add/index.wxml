@@ -1,0 +1,25 @@
+<snav title="添加好友">
+  <view class="back" catchtap="backClick">
+    <image class='back_kmg' src="../../image/back.png"></image>
+  </view>
+</snav>
+<view class="container" style="padding-top:{{navHeight}}px">
+  <view class='inputFrame'>
+    <input type='text' value="{{searchText}}" placeholder='输入要查找的好友用户名' bindinput="searchHandler" bindconfirm="search"></input>
+  </view>
+  <view wx:if="{{rosterInfo.username}}">
+    <view class="item" bindtap="goChat">
+      <image src="{{rosterInfo.avatar}}" class='avatar'></image>
+      <text class='uname'>{{rosterInfo.nick_name || rosterInfo.username}}</text>
+    </view>
+    <view class='inputFrame' wx:if="{{rosterInfo.relation==2 || rosterInfo.relation==1}}">
+      <input type='text' value="{{alias}}" placeholder='好友别名' bindinput="aliasHandler"></input>
+    </view>
+    <view class='bindBtn sgray' wx:if="{{rosterInfo.relation==0}}">
+      <text>已是好友</text>
+    </view>
+    <view class='bindBtn sblue' wx:if="{{rosterInfo.relation==2 || rosterInfo.relation==1}}" bindtap='addFriend'>
+      <text>添加好友</text>
+    </view>
+  </view>
+</view>

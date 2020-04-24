@@ -1,0 +1,30 @@
+<snav title="详细信息">
+  <view class="back" catchtap="backClick">
+    <image class='back_kmg' src="../../image/back.png"></image>
+  </view>
+</snav>
+<view class="container">
+  <image src="{{avatar}}" class='avatar'></image>
+  <view class='txtFrame'>
+    <view class='left'>
+      <text>姓名:</text>
+    </view>
+    <view class='right'>
+      <text>{{name}}</text>
+    </view>
+  </view>
+
+  <view class='txtFrame'>
+    <view class='left'>
+      <text>职位:</text>
+    </view>
+    <view class='right'>
+      <text>{{offer}}</text>
+    </view>
+  </view>
+
+  <view class='buttonFrame'>
+    <button type="primary" bindtap='goChat'>反馈问题</button>
+  </view>
+  
+</view>

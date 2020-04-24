@@ -1,0 +1,25 @@
+<!--index.wxml-->
+<view>
+  <view class='time'>
+    <text>{{time}}</text>
+  </view>
+  <view class='container'>
+    <view class="{{cls}}">
+
+      <view class='rosterInfo'>
+        <image class='avatar' src="{{avatar}}"></image>
+        <text class='username'>{{username}}</text>
+      </view>
+      <view class="contentFrame">
+        
+        <view class='c_content'>
+          <text wx:if="{{type == 'text'}}">{{content}}</text>
+          <image class='cimage' wx:if="{{type == 'image'}}" src="{{attachImage}}"></image>
+        </view>
+      </view>
+      
+    </view>
+  
+  
+  </view>
+</view>
