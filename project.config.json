@@ -30,7 +30,7 @@
 		}
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.10.4",
+	"libVersion": "2.11.0",
 	"appid": "wx2c43b05e798fa1c1",
 	"projectname": "Floo",
 	"debugOptions": {

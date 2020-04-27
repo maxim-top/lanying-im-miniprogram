@@ -15,8 +15,14 @@ Page({
     if( getApp().isIMLogin() ){
       this.onLogin();
       return;
+    }else{
+      const im = getApp().getIM();
+      if ( im ) {
+        im.on('loginSuccess', this.onLogin);
+        im.on('loginerror', this.onLoginFailure);
+      }
     }
-
+    
     let menuButtonObject = wx.getMenuButtonBoundingClientRect();
     wx.getSystemInfo({
       success: res => {

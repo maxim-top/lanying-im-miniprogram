@@ -8,6 +8,7 @@ Component({
     cls: '',
     username: '',
     avatar: '',
+    audio: '',
     contentType: 0,
     content: '',
     attachImage: '',
@@ -35,9 +36,6 @@ Component({
     const toType = message.toType;
     let content = message.content || '';
     let username = '';
-    let audio = '';
-    const token = app.im.userManage.getToken();
-    const app_id = app.im.userManage.getAppid();
 
     const umaps = app.im.rosterManage.getAllRosterDetail();
     const fromUserObj = umaps[from] || {};
@@ -57,14 +55,29 @@ Component({
     }
 
     const attach = message.attach || {};
-
     let url = attach.url || '';
 
     if (url && type === 'image') {
-      url = app.im.sysManage.getImage({ avatar: url });
+      url = app.im.sysManage.getImage({avatar: url});
     }
     if (url && type === 'audio') {
-      audio = `${attach.url}&app_id=${app_id}&access-token=${token}&format=mp3`;
+      // 1. use the audio url;
+      let audio = app.im.sysManage.getAudio({url});
+      console.log("getAudio: ", audio);
+      this.setData({
+        audio,
+      });
+      
+      // 2. download audio to local file
+      // const that = this;
+      // app.im.sysManage.downloadAudio({url}).then((res) => {
+      //   console.log("getAudio: ", res);
+      //   that.setData({
+      //     audio: res,
+      //   });
+      // }).catch((ex) => {
+      //   console.error("getAudio error: ", ex);
+      // });
     }
 
     let { timestamp } = message;
@@ -85,29 +98,28 @@ Component({
       toType,
       content,
       attachImage: url,
-      audio,
       time,
       from,
     });
-
-
-
-
   },
 
   methods: {
     splayAudio: function () {
       const innerAudioContext = wx.createInnerAudioContext()
       // innerAudioContext.autoplay = true
+      innerAudioContext.obeyMuteSwitch = false;
       innerAudioContext.loop = false;
       innerAudioContext.src = this.data.audio;
+      console.log("Play audio: ", this.data.audio);
+      this.setData({ playing: true });
       innerAudioContext.onPlay(() => {
-        this.setData({ playing: true });
         setTimeout(() => {
           innerAudioContext.stop();
-        }, this.data.attach.duration * 1000)
+        }, (this.data.attach.duration+3) * 1000);
       })
       innerAudioContext.onError((res) => {
+        console.error("Can't play audio due to ", res);
+        console.error("Play audio error: ", this.data.audio);
         this.setData({ playing: false });
       })
       innerAudioContext.onStop((res) => {
@@ -121,10 +133,8 @@ Component({
         wx.navigateTo({
           url: '/pages/profile/userinfo/index?uid=' + this.data.from,
         });
-
       }
     }
-    ////
   },
 
 })

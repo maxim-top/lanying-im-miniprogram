@@ -12,8 +12,8 @@
         <text wx:if="{{type == 'text'}}">{{content}}</text>
         <image class='cimage' wx:if="{{type == 'image'}}" src="{{attachImage}}"></image>
         <!-- <audio name="音频文件" wx:if="{{type == 'audio'}}" author="" src="{{audio}}" class="saudio" controls></audio> -->
-        <view class="voice_frmae" wx:if="{{type == 'audio'}}">
-          <image class="voice" wx:if="{{playing==false}}" src="../../image/voice/stop.png" bindtap="splayAudio"></image>
+        <view class="voice_frmae" wx:if="{{type == 'audio'}}" bindtap="splayAudio">
+          <image class="voice" wx:if="{{playing==false}}" src="../../image/voice/stop.png"></image>
           <image class="voice" wx:if="{{playing==true}}" src="../../image/voice/start.png"></image>
           <text class="voice_duration">'{{attach.duration}}</text>
         </view>

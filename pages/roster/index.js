@@ -16,6 +16,7 @@ Page({
     startTime: 0,
     duration: 0,
     timer: null,
+    recordFile: '',
   },
 
   onShow: function () {
@@ -63,7 +64,7 @@ Page({
 
     this.setData({ stitle: nick || fromUserObj.nick_name || fromUserObj.username || '' });
 
-    const wh = wx.getSystemInfoSync().windowHeight - this.data.navHeight - 50;
+    const wh = wx.getSystemInfoSync().windowHeight - this.data.navHeight - 70;
     this.setData({ wh });
   },
 
@@ -204,20 +205,26 @@ Page({
 
     var that = this;
     const recorderManager = wx.getRecorderManager();
+    recorderManager.onError((res) => {
+      console.log("录音错误: ", res);
+    });
+    recorderManager.onStop(function(res){
+      that.setData({
+        recordFile: res.tempFilePath,
+        duration: Math.ceil((new Date().getTime() - that.data.startTime) / 1000)
+      });
+      
+      that.preupload(that.data.recordFile);
+      console.log("录音完成: ", that.data.recordFile);
+    });
+
     const options = {
-      duration: 30000,
       sampleRate: 44100,
       numberOfChannels: 1,
       encodeBitRate: 192000,
-      format: 'aac',
-      frameSize: 500
-    }
-    recorderManager.onError((res) => {
-      console.log(res);
-
-    });
+      format: 'mp3',
+    };
     recorderManager.start(options);
-
     this.setData({
       startTime: new Date().getTime(), recordTxt: '录音中'
     })
@@ -225,7 +232,6 @@ Page({
     const timer = setTimeout(() => {
       this.stopRecord();
     }, 30000);
-
     this.setData({ timer })
   },
   stopRecord () {
@@ -234,24 +240,13 @@ Page({
       this.setData({ timer: null });
     }
     const recorderManager = wx.getRecorderManager();
-    var that = this;
-
-    recorderManager.onStop((res) => {
-      console.log('。。停止录音。。', res.tempFilePath)
-      const { tempFilePath } = res;
-      that.setData({
-        duration: Math.ceil((new Date().getTime() - that.data.startTime) / 1000)
-      });
-      that.preupload(tempFilePath);
-    });
     recorderManager.stop();
-    /////
     this.setData({ recordTxt: '按下录音' });
   },
   preupload (path) {
     const that = this;
     getApp().globalData.im.sysManage.asyncGetFileUploadChatFileUrl({
-      file_type: 101,
+      file_type: 104,
       to_id: this.data.uid,
       to_type: 1
     }).then(res => {
@@ -287,7 +282,6 @@ Page({
         console.log("。。录音保存失败。。");
       }
     });
-
   },
 
   sendVoiceMessage (url) {

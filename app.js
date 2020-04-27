@@ -37,7 +37,7 @@ App({
       if (loginInfo && loginInfo.username) {
         im.login({
           //TODO: change name to username
-          name: loginInfo.username,
+          name: loginInfo.username, 
           password: loginInfo.password,
         })
       } else if (loginInfo && loginInfo.user_id) {
@@ -54,6 +54,7 @@ App({
     const dnsServer = this.globalData.dnsServer;
     const ws = this.globalData.ws;
     const autoLogin = this.globalData.autoLogin
+    console.log("Init flooim for ", appid);
     const config = {
       autoLogin,
       dnsServer,

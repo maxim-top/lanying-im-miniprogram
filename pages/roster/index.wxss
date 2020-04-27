@@ -1,18 +1,16 @@
 /**index.wxss**/
 .container {
   display: block;
-  padding:  0 30rpx;
-  padding-top: 64px;
+  padding:  0rpx 30rpx;
   background: #Fefefe;
-  padding-bottom: 100rpx;
 }
 
 .inputer {
   height: 100rpx;
   width: 750rpx;
   position: fixed;
-  bottom: 0;
-  left: 0;
+  bottom: 20rpx;
+  left: 5rpx;
   border-top: 1rpx solid #CCC;
   background: white;
 }

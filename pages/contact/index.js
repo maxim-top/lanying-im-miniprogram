@@ -89,6 +89,9 @@ Page({
 
     const im = getApp().getIM();
     if(im) {
+      im.on("loginerror", (err) => {
+        console.log("Login error due to ", err);
+      });
       im.on("onRosterListUpdate", () => {
         this.getRosterList();
       });
