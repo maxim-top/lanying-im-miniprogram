@@ -1,5 +1,15 @@
 ## 美信拓扑IM 小程序版
 
+[美信拓扑](https://www.maximtop.com/)，一键启用多云架构的即时通讯云服务
+
+美信拓扑IM为美信拓扑云服务的DemoApp，方便 App 开发者体验和使用 IM SDK，可以直接[在线试用](https://chat-h5.maximtop.com)，也可以在官网[下载页面](https://www.maximtop.com/downloads/)选择试用所有客户端。
+
+## 重要 
+
+由于 [Uniapp版](https://github.com/maxim-top/maxim-uniapp) 已经发布，本工程即将进入维护阶段，推荐开发小程序/H5的开发者使用 Uniapp 版本。
+
+## 工程说明
+
 此工程为标准微信工程，共有四个源码目录：
 
 1. im 存放美信拓扑IM SDK，当前最新版本为 floo-2.0.0.miniprogram.js
