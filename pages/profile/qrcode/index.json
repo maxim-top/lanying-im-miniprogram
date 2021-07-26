@@ -1,5 +1,5 @@
 {
   "usingComponents": {
-    "snav": "../components/snav/index"
+    "snav": "/pages/components/snav/index"
   }
 }

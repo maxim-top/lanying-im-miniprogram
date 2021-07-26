@@ -1,6 +1,6 @@
 {
   "usingComponents": {
-    "snav": "../components/snav/index",
-    "prompt" : "../components/prompt/index"
+    "snav": "/pages/components/snav/index",
+    "prompt" : "/pages/components/prompt/index"
   }
 }
