@@ -4,6 +4,8 @@
 
 美信拓扑IM为美信拓扑云服务的DemoApp，方便 App 开发者体验和使用 IM SDK，可以直接[在线试用](https://chat-h5.maximtop.com)，也可以在官网[下载页面](https://www.maximtop.com/downloads/)选择试用所有客户端。
 
+[![Scc Count Badge](https://sloc.xyz/github/maxim-top/maxim-miniprogram/?category=total&avg-wage=1)](https://github.com/maxim-top/maxim-miniprogram/) [![Scc Count Badge](https://sloc.xyz/github/maxim-top/maxim-miniprogram/?category=code&avg-wage=1)](https://github.com/maxim-top/maxim-miniprogram/)
+
 ## 重要！重要！重要！  
 
 由于 [Uniapp版](https://github.com/maxim-top/maxim-uniapp) 已经发布，本工程即将进入维护阶段，推荐开发小程序/H5的开发者使用 Uniapp 版本。
