@@ -6,9 +6,11 @@
 
 [![Scc Count Badge](https://sloc.xyz/github/maxim-top/maxim-miniprogram/?category=total&avg-wage=1)](https://github.com/maxim-top/maxim-miniprogram/) [![Scc Count Badge](https://sloc.xyz/github/maxim-top/maxim-miniprogram/?category=code&avg-wage=1)](https://github.com/maxim-top/maxim-miniprogram/)
 
-## 重要！重要！重要！  
+## 重要！重要！重要！ 
 
-由于 [Uniapp版](https://github.com/maxim-top/maxim-uniapp) 已经发布，本工程即将进入维护阶段，推荐开发小程序/H5的开发者使用 Uniapp 版本。
+由于 [Uniapp版](https://github.com/maxim-top/maxim-uniapp) 已经发布，本工程已进入维护阶段，推荐开发小程序/H5的开发者使用 Uniapp 版本。
+
+维护阶段意味着 UI 和 API 调用示例等代码将不会是最新，这意味着即使功能可用，但也可能使用了已被废弃的调用方式。当然，SDK 本身是好用的，实质上使用的是跟 Uniapp 版本同一个库，都是从 [floo-uniapp](https://github.com/maxim-top/floo-web)工程打包出来的。
 
 ## 工程说明
 
