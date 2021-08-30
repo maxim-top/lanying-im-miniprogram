@@ -20,7 +20,7 @@ App({
   globalData: {
     im: {},
     navH: 0,
-    dnsServer: "https://dns.maximtop.com/app_dns",
+    // dnsServer: "https://dns.maximtop.com/v2/app_dns",
     appid: "welovemaxim",
     ws: true,
     autoLogin: true
