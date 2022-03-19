@@ -1,18 +1,18 @@
 {
-  "name": "maxim-miniprogram",
+  "name": "lanying-im-miniprogram",
   "version": "1.0.0",
-  "description": "maxim miniprogram version ..",
+  "description": "lanying-im miniprogram version",
   "main": "app.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/maxim-top/maxim-miniprogram.git"
+    "url": "git+https://github.com/maxim-top/lanying-im-miniprogram.git"
   },
   "author": "Beijing Maximtop Technology Co.,Ltd",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/maxim-top/maxim-miniprogram/issues"
+    "url": "https://github.com/maxim-top/lanying-im-miniprogram/issues"
   },
-  "homepage": "https://github.com/maxim-top/maxim-miniprogram#readme",
+  "homepage": "https://github.com/maxim-top/lanying-im-miniprogram#readme",
   "devDependencies": {
     "@babel/core": "^7.7.5",
     "@babel/polyfill": "^7.7.0",
@@ -25,14 +25,14 @@
   },
   "scripts": {
     "sdk": "webpack --config=webpack.config.js",
-    "release": "yarn sdk && ./floo.sh maxim-miniprogram"
+    "release": "yarn sdk && ./floo.sh lanying-im-miniprogram"
   },
   "dependencies": {
     "protobufjs": "github:ericliang/protobufjs.wechat",
     "query-string": "^6.12.1"
   },
   "keywords": [
-    "美信拓扑IM",
-    "maxim-miniprogram"
+    "蓝莺IM",
+    "lanying-im-miniprogram"
   ]
 }

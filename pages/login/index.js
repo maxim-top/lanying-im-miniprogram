@@ -163,10 +163,10 @@ Page({
   },
 
   getAppid () {
-    return wx.getStorageSync("maxim-appid") || "welovemaxim";
+    return wx.getStorageSync("lanying-im-appid") || "welovemaxim";
   },
   saveAppid (v) {
-    return wx.setStorageSync("maxim-appid", v);
+    return wx.setStorageSync("lanying-im-appid", v);
   },
 
   onShow () {

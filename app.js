@@ -90,11 +90,11 @@ App({
   },
 
   saveLoginInfo( info ) {
-    wx.setStorageSync('maxim_logininfo', info);
+    wx.setStorageSync('lanying_im_logininfo', info);
   },
 
   getLoginInfo() {
-    return wx.getStorageSync('maxim_logininfo') || {};
+    return wx.getStorageSync('lanying_im_logininfo') || {};
   },
 
   imLogout () {
@@ -102,7 +102,7 @@ App({
     console.log("IM logout: ", info);
     this.getIM().logout();
 
-    wx.removeStorageSync('maxim_logininfo');
+    wx.removeStorageSync('lanying_im_logininfo');
 
     wx.reLaunch({
       url: '../account/login/index',

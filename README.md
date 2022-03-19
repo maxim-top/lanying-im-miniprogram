@@ -1,14 +1,14 @@
-## 美信拓扑IM 小程序版
+## 蓝莺IM 小程序版
 
-[美信拓扑](https://www.maximtop.com/)，一键启用多云架构的即时通讯云服务
+蓝莺IM，是由[美信拓扑](https://www.maximtop.com/)团队研发的新一代即时通讯云服务，SDK设计简单集成方便，服务采用云原生技术和多云架构，私有云也可按月付费。
 
-美信拓扑IM为美信拓扑云服务的DemoApp，方便 App 开发者体验和使用 IM SDK，可以直接[在线试用](https://chat-h5.maximtop.com)，也可以在官网[下载页面](https://www.maximtop.com/downloads/)选择试用所有客户端。
+蓝莺IM APP 为方便体验试用蓝莺 IMSDK 的 DemoApp。开发者可直接[在线试用](https://chat-h5.maximtop.com)，也可在官网[下载页面](https://www.maximtop.com/downloads/)选择试用所有客户端。
 
-[![Scc Count Badge](https://sloc.xyz/github/maxim-top/maxim-miniprogram/?category=total&avg-wage=1)](https://github.com/maxim-top/maxim-miniprogram/) [![Scc Count Badge](https://sloc.xyz/github/maxim-top/maxim-miniprogram/?category=code&avg-wage=1)](https://github.com/maxim-top/maxim-miniprogram/)
+[![Scc Count Badge](https://sloc.xyz/github/maxim-top/lanying-im-miniprogram/?category=total&avg-wage=1)](https://github.com/maxim-top/lanying-im-miniprogram/) [![Scc Count Badge](https://sloc.xyz/github/maxim-top/lanying-im-miniprogram/?category=code&avg-wage=1)](https://github.com/maxim-top/lanying-im-miniprogram/)
 
 ## 重要！重要！重要！ 
 
-由于 [Uniapp版](https://github.com/maxim-top/maxim-uniapp) 已经发布，本工程已进入维护阶段，推荐开发小程序/H5的开发者使用 Uniapp 版本。
+由于 [Uniapp版](https://github.com/maxim-top/lanying-im-uniapp) 已经发布，本工程已进入维护阶段，推荐开发小程序/H5的开发者使用 Uniapp 版本。
 
 维护阶段意味着 UI 和 API 调用示例等代码将不会是最新，这意味着即使功能可用，但也可能使用了已被废弃的调用方式。当然，SDK 本身是好用的，实质上使用的是跟 Uniapp 版本同一个库，都是从 [floo-uniapp](https://github.com/maxim-top/floo-web)工程打包出来的。
 
@@ -16,7 +16,7 @@
 
 此工程为标准微信工程，共有四个源码目录：
 
-1. im 存放美信拓扑IM SDK，当前最新版本为 floo-2.0.0.miniprogram.js
+1. im 存放蓝莺IM SDK，当前最新版本为 floo-2.0.0.miniprogram.js
 2. pages 为 UI 源码目录；
 3. utils 为使用的工具类源码；
 4. third 为第三方源码；
@@ -51,3 +51,6 @@ npm install -S --production ericliang/protobufjs.wechat
 执行完就可以正常编译小程序啦！
 
 了解更多信息可以阅读[在线文档](https://www.maximtop.com/docs/)，或者在本仓库提问 :)
+
+-- --
+**蓝莺IM 专业SDK，私有云按月付费**
